@@ -7,4 +7,5 @@
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     -->
     <item type="layout" name="activity_headline_list">@layout/activity_headline_twopane</item>
+    <item type="layout" name="activity_anti_fragment">@layout/activity_anti_fragment_dual_pane</item>
 </resources>
