@@ -32,11 +32,6 @@ public class MyDetailView extends LinearLayout {
                 presenter.buttonClicked();
             }
         });
-
-        AntiFragmentActivity activity = (AntiFragmentActivity) getContext();
-        ActionBar actionBar = activity.getActionBar();
-        actionBar.setTitle(R.string.title_headline_detail);
-        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void setItem(String item) {

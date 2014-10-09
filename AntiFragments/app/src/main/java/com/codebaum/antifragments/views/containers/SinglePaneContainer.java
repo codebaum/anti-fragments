@@ -46,6 +46,11 @@ public class SinglePaneContainer extends FrameLayout implements Container {
         if (listViewAttached()) {
             removeViewAt(0);
             View.inflate(getContext(), R.layout.detail, this);
+
+            AntiFragmentActivity activity = (AntiFragmentActivity) getContext();
+            ActionBar actionBar = activity.getActionBar();
+            actionBar.setTitle(R.string.title_headline_detail);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
         MyDetailView detailView = (MyDetailView) getChildAt(0);
         detailView.setItem(item);
