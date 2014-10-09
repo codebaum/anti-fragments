@@ -1,0 +1,18 @@
+<com.codebaum.antifragments.views.containers.DualPaneContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.codebaum.antifragments.views.ItemListView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2" />
+
+    <include
+        layout="@layout/detail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8" />
+
+</com.codebaum.antifragments.views.containers.DualPaneContainer>

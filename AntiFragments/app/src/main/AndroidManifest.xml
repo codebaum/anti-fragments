@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".activities.HeadlineListActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_headline_list" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

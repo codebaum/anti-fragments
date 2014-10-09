@@ -38,7 +38,8 @@ public class ItemListView extends ListView {
         setOnItemClickListener(new OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> parent, View view,
                                               int position, long id) {
-                String item = (String) adapter.getItem(position);
+                DummyContent.DummyItem dummyItem = (DummyContent.DummyItem) adapter.getItem(position);
+                String item = dummyItem.content;
                 AntiFragmentActivity activity = (AntiFragmentActivity) getContext();
                 Container container = activity.getContainer();
                 container.showItem(item);

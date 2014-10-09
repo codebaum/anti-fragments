@@ -16,7 +16,7 @@ public class AntiFragmentActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anti_fragment);
 
-//        container = (Container) findViewById(R.id.container);
+        container = (Container) findViewById(R.id.container);
     }
 
 
