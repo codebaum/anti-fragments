@@ -1,5 +1,6 @@
 package com.codebaum.antifragments.views;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.codebaum.antifragments.R;
+import com.codebaum.antifragments.activities.AntiFragmentActivity;
 import com.codebaum.antifragments.presenters.DetailPresenter;
 
 /**
@@ -30,6 +32,11 @@ public class MyDetailView extends LinearLayout {
                 presenter.buttonClicked();
             }
         });
+
+        AntiFragmentActivity activity = (AntiFragmentActivity) getContext();
+        ActionBar actionBar = activity.getActionBar();
+        actionBar.setTitle(R.string.title_headline_detail);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void setItem(String item) {

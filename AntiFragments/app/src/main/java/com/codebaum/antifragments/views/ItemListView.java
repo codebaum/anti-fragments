@@ -1,5 +1,6 @@
 package com.codebaum.antifragments.views;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -36,8 +37,8 @@ public class ItemListView extends ListView {
                 DummyContent.ITEMS);
         setAdapter(adapter);
         setOnItemClickListener(new OnItemClickListener() {
-            @Override public void onItemClick(AdapterView<?> parent, View view,
-                                              int position, long id) {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DummyContent.DummyItem dummyItem = (DummyContent.DummyItem) adapter.getItem(position);
                 String item = dummyItem.content;
                 AntiFragmentActivity activity = (AntiFragmentActivity) getContext();

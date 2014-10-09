@@ -3,8 +3,8 @@
 
     <string name="app_name">Anti Fragments</string>
     <string name="title_headline_detail">Headline Detail</string>
-    <string name="title_headline_list">Pro Fragments</string>
-    <string name="title_activity_anti_fragment">Anti Fragments</string>
+    <string name="title_headline_list_pro">Headlines (Pro)</string>
+    <string name="title_headline_list_anti">Headlines (Anti)</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
