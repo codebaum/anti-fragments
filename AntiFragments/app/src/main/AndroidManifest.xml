@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".HeadlineListActivity"
+            android:name=".activities.HeadlineListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +17,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HeadlineDetailActivity"
+            android:name=".activities.HeadlineDetailActivity"
             android:label="@string/title_headline_detail"
-            android:parentActivityName=".HeadlineListActivity" >
+            android:parentActivityName=".activities.HeadlineListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HeadlineListActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AntiFragmentActivity"
+            android:label="@string/title_activity_anti_fragment" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

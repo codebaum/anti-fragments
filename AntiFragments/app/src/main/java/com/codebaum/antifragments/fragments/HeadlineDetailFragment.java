@@ -1,4 +1,4 @@
-package com.codebaum.antifragments;
+package com.codebaum.antifragments.fragments;
 
 import android.os.Bundle;
 import android.app.Fragment;
@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.codebaum.antifragments.R;
 import com.codebaum.antifragments.dummy.DummyContent;
 
 /**
  * A fragment representing a single Headline detail screen.
- * This fragment is either contained in a {@link HeadlineListActivity}
- * in two-pane mode (on tablets) or a {@link HeadlineDetailActivity}
+ * This fragment is either contained in a {@link com.codebaum.antifragments.activities.HeadlineListActivity}
+ * in two-pane mode (on tablets) or a {@link com.codebaum.antifragments.activities.HeadlineDetailActivity}
  * on handsets.
  */
 public class HeadlineDetailFragment extends Fragment {

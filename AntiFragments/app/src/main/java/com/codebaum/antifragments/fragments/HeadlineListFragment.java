@@ -1,4 +1,4 @@
-package com.codebaum.antifragments;
+package com.codebaum.antifragments.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;

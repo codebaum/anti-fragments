@@ -1,10 +1,12 @@
-package com.codebaum.antifragments;
+package com.codebaum.antifragments.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 
-
+import com.codebaum.antifragments.fragments.HeadlineDetailFragment;
+import com.codebaum.antifragments.fragments.HeadlineListFragment;
+import com.codebaum.antifragments.R;
 
 
 /**
@@ -16,11 +18,11 @@ import android.app.Activity;
  * item details side-by-side using two vertical panes.
  * <p>
  * The activity makes heavy use of fragments. The list of items is a
- * {@link HeadlineListFragment} and the item details
- * (if present) is a {@link HeadlineDetailFragment}.
+ * {@link com.codebaum.antifragments.fragments.HeadlineListFragment} and the item details
+ * (if present) is a {@link com.codebaum.antifragments.fragments.HeadlineDetailFragment}.
  * <p>
  * This activity also implements the required
- * {@link HeadlineListFragment.Callbacks} interface
+ * {@link com.codebaum.antifragments.fragments.HeadlineListFragment.Callbacks} interface
  * to listen for item selections.
  */
 public class HeadlineListActivity extends Activity
