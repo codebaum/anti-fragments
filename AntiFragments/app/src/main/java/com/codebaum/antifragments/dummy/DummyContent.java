@@ -1,5 +1,8 @@
 package com.codebaum.antifragments.dummy;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,18 +41,61 @@ public class DummyContent {
     /**
      * A dummy item representing a piece of content.
      */
-    public static class DummyItem {
+    public static class DummyItem implements Parcelable {
+
+        /* Variables */
+
         public String id;
         public String content;
+
+        public static final Parcelable.Creator<DummyItem> CREATOR =
+                new Parcelable.Creator<DummyItem>(){
+
+                    @Override
+                    public DummyItem createFromParcel(Parcel source) {
+                        return new DummyItem(source);
+                    }
+
+                    @Override
+                    public DummyItem[] newArray(int size) {
+                        return new DummyItem[size];
+                    }
+                };
+
+        /* Constructors */
 
         public DummyItem(String id, String content) {
             this.id = id;
             this.content = content;
         }
 
+        public DummyItem(Parcel source){
+            readFromParcel(source);
+        }
+
+        /* Overridden Methods */
+
         @Override
         public String toString() {
             return content;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(id);
+            dest.writeString(content);
+        }
+
+        /* Custom Methods */
+
+        public void readFromParcel(Parcel source){
+            id = source.readString();
+            content = source.readString();
         }
     }
 }

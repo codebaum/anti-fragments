@@ -9,11 +9,15 @@ import com.codebaum.antifragments.views.MyDetailView;
  */
 public class DetailPresenter {
 
+    /* SETUP */
+
     private MyDetailView view;
 
     public void setView(MyDetailView view) {
         this.view = view;
     }
+
+    /* ACTIONS */
 
     public void buttonClicked() {
         Toast.makeText(view.getContext(), "Button clicked!", Toast.LENGTH_SHORT).show();

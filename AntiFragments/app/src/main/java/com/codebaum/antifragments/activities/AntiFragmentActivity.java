@@ -2,13 +2,19 @@ package com.codebaum.antifragments.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.codebaum.antifragments.R;
+import com.codebaum.antifragments.dummy.DummyContent;
 import com.codebaum.antifragments.interfaces.Container;
 
 public class AntiFragmentActivity extends Activity {
+
+    /**
+     * The serialization (saved instance state) Bundle key representing the
+     * activated item position. Only used on tablets.
+     */
+    private static final String STATE_ACTIVATED_POSITION = "activated_position";
 
     private Container container;
 
@@ -18,6 +24,14 @@ public class AntiFragmentActivity extends Activity {
         setContentView(R.layout.activity_anti_fragment);
 
         container = (Container) findViewById(R.id.container);
+
+        // Restore the previously serialized activated item position.
+        if (savedInstanceState != null && savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
+            DummyContent.DummyItem savedItem = savedInstanceState.getParcelable(STATE_ACTIVATED_POSITION);
+            if (savedItem != null) {
+                container.showItem(savedItem);
+            }
+        }
     }
 
 
@@ -50,6 +64,12 @@ public class AntiFragmentActivity extends Activity {
         if (!handled) {
             finish();
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(STATE_ACTIVATED_POSITION, container.getDetailState());
     }
 
     public Container getContainer() {

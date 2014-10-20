@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 
 import com.codebaum.antifragments.R;
 import com.codebaum.antifragments.activities.AntiFragmentActivity;
+import com.codebaum.antifragments.dummy.DummyContent;
 import com.codebaum.antifragments.interfaces.Container;
 import com.codebaum.antifragments.views.ItemListView;
 import com.codebaum.antifragments.views.MyDetailView;
@@ -42,7 +43,7 @@ public class SinglePaneContainer extends FrameLayout implements Container {
         return false;
     }
 
-    @Override public void showItem(String item) {
+    @Override public void showItem(DummyContent.DummyItem item) {
         if (listViewAttached()) {
             removeViewAt(0);
             View.inflate(getContext(), R.layout.detail, this);
@@ -52,8 +53,19 @@ public class SinglePaneContainer extends FrameLayout implements Container {
             actionBar.setTitle(R.string.title_headline_detail);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
         MyDetailView detailView = (MyDetailView) getChildAt(0);
         detailView.setItem(item);
+    }
+
+    @Override
+    public DummyContent.DummyItem getDetailState() {
+        if (listViewAttached()) {
+            return null;
+        }
+
+        MyDetailView detailView = (MyDetailView) getChildAt(0);
+        return detailView.getItem();
     }
 
     private boolean listViewAttached() {

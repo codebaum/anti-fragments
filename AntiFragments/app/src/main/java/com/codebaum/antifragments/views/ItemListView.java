@@ -40,10 +40,9 @@ public class ItemListView extends ListView {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DummyContent.DummyItem dummyItem = (DummyContent.DummyItem) adapter.getItem(position);
-                String item = dummyItem.content;
                 AntiFragmentActivity activity = (AntiFragmentActivity) getContext();
                 Container container = activity.getContainer();
-                container.showItem(item);
+                container.showItem(dummyItem);
             }
         });
     }
